@@ -33,14 +33,16 @@
     <form action="shipment" method="get">
          <h3>Type your Zip Code to see estimated delivery time</h3>
               <div class="input-group">
-                <input type="text" id="postZipCode" onkeyup="success()"  class="form-control" name="postZipCode"  placeholder="Type in Zip Code" > 
+                <input type="text" id="postZipCode"   onkeyup="success()"  class="form-control" name="postZipCode"  placeholder="Type in Zip Code" > 
+                <input type="date" id="range" name="range">
+                <input type="date" id="range2" name="range2">
+
                   <span class="input-group-btn"> 
                     <button onclick=validate() type="submit" id="disabledBtn" disabled class="btn btn-info"> Search
                     </button>
                   </span>
               </div>
           </form>
-
     </div>    
     </body>
 </html>

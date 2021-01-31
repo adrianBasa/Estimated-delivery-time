@@ -27,8 +27,8 @@
     <?php $postZipCode = request('postZipCode');?>
  
 <div class="container" style="padding-top:10%">
-@if($data==0)      
-  <h5>  <b>Not found any informatioan about this "<?php echo $postZipCode ?>" Zip Code, try again latter! </b> </h5>
+@if($data == -1)      
+  <h5>  <b>No data found for "<?php echo $postZipCode ?>" Zip Code, try again latter! </b> </h5>
   @else
     
 <h1> estimated delivery time</h1>
