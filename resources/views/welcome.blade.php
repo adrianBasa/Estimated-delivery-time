@@ -32,16 +32,22 @@
     <div class="container" style="padding-top:5%">
     <form action="shipment" method="get">
          <h3>Type your Zip Code to see estimated delivery time</h3>
-              <div class="input-group">
+              
                 <input type="text" id="postZipCode"   onkeyup="success()"  class="form-control" name="postZipCode"  placeholder="Type in Zip Code" > 
-                <input type="date" id="range" name="range">
-                <input type="date" id="range2" name="range2">
-
-                  <span class="input-group-btn"> 
+                
+                  <span class="input-group" style="padding-top:2%"> 
+                  <input type="date" id="range" name="range">
+                  <!-- block range2 whne 1 month or 3 months selected -->
+                <input type="date" id="range2" name="range2">                
+                <select name="monthrange" >
+                <option value="0">No range</option>
+                <option value="30">last 1 month</option>
+                <option value="90">last 3 months</option>              
+                 </select>
                     <button onclick=validate() type="submit" id="disabledBtn" disabled class="btn btn-info"> Search
                     </button>
                   </span>
-              </div>
+              
           </form>
     </div>    
     </body>

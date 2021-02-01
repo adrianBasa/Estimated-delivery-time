@@ -2,7 +2,7 @@
 namespace Tests;
 use RefreshDatabase;
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
-use App\Models\DeliveryEstimator;
+use App\Providers\DeliveryEstimator;
 abstract class TestCase extends BaseTestCase
 {
     use CreatesApplication;
@@ -23,5 +23,29 @@ abstract class TestCase extends BaseTestCase
         $estimatedDelivery = $estimator->CalculateDelivery($deliveries);    
         $this->assertTrue($estimatedDelivery == -1);   
     } 
+
+    /** @test */
+    public function TestGetDaysToAddReturnsZeroWhenWeekDay()
+    {   
+        $estimator = new DeliveryEstimator();
+        $daysToAdd = $estimator->GetDaysToAdd(date('2021-02-01'));    
+        $this->assertTrue($daysToAdd == 0);   
+    }
+
+    /** @test */
+    public function TestGetDaysToAddReturnsOneWhenSunday()
+    {   
+        $estimator = new DeliveryEstimator();
+        $daysToAdd = $estimator->GetDaysToAdd(date('2021-01-31'));    
+        $this->assertTrue($daysToAdd == 1);   
+    }
+
+    /** @test */
+    public function TestGetDaysToAddReturnsTwoWhenSaturday()
+    {   
+        $estimator = new DeliveryEstimator();
+        $daysToAdd = $estimator->GetDaysToAdd(date('2021-01-30'));    
+        $this->assertTrue($daysToAdd == 2);   
+    }
 }
 

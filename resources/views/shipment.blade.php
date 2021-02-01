@@ -27,7 +27,7 @@
     <?php $postZipCode = request('postZipCode');?>
  
 <div class="container" style="padding-top:10%">
-@if($data == -1)      
+@if($data == 0)      
   <h5>  <b>No data found for "<?php echo $postZipCode ?>" Zip Code, try again latter! </b> </h5>
   @else
     
@@ -40,9 +40,7 @@
 @endif
 </div>
 <div class="container">
-<a href="/" style="padding-top:10%">
-<button  class="btn btn-info"> Back
-</a>
+<button class="btn btn-info" onclick="window.history.back()">Back</button>
 </div>
 </body>
 </html>

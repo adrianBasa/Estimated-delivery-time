@@ -162,6 +162,8 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         App\Repositories\BackendServiceProvider::class,
+        App\Providers\MyCustomProvider::class,
+
         /*
          * Package Service Providers...
          */

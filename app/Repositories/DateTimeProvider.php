@@ -11,4 +11,11 @@ class DateTimeProvider implements DateTimeProviderInterface {
     {
         return Date('Y-m-d', strtotime('+' . $daysToAdd . ' days'));
     }
+
+    public function subDaysFromToday($daysToSub)
+    {
+        return date('Y-m-d', strtotime('-' . $daysToSub . 'days'));
+    }
+   
+    
 }
